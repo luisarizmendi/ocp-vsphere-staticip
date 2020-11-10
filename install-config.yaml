@@ -1,0 +1,25 @@
+apiVersion: v1
+baseDomain: pre.srv.demo
+proxy:
+  httpProxy: http://proxy.srv.demo:8080
+  httpsProxy: http://proxy.srv.demo:8080
+  noProxy: .oc.pre.srv.demo,api.oc.pre.srv.demo,api-int.oc.pre.srv.demo,172.27.150.0/23,172.30.0.0/16,10.128.0.0/14
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 3
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: oc
+platform:
+  vsphere:
+    vcenter: vcenter01.srv.demo
+    username: openshift@vsphere.local
+    password: superpassword
+    datacenter: DC1
+    defaultDatastore: mydatastore
+pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"....'
+sshKey: 'ssh-rsa AAAA...'
