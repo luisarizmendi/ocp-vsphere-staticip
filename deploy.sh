@@ -2,7 +2,7 @@
 set -x
 export OCP_RELEASE="4.6.1"
 
-export HTTP_SERVER="g1heocjumphost01.srv.demo"
+export HTTP_SERVER="jumphost01.srv.demo"
 
 export http_proxy=http://proxy.srv.demo:8080
 export https_proxy=http://proxy.srv.demo:8080
